@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhp5w3u7fdvxu"]
+
+[ext_resource type="Texture2D" uid="uid://qojp7mrpmpms" path="res://assets/cloud-2.png" id="1_ictil"]
+[ext_resource type="Texture2D" uid="uid://bndeh0w2rerbf" path="res://assets/cloud-1.png" id="2_fgqpt"]
+
+[sub_resource type="Gradient" id="Gradient_ictil"]
+offsets = PackedFloat32Array(0, 0.45614, 1)
+colors = PackedColorArray(0.509804, 0.737255, 0.733333, 1, 0.6, 0.811765, 0.796078, 1, 0.6, 0.811765, 0.796078, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fgqpt"]
+gradient = SubResource("Gradient_ictil")
+fill_to = Vector2(0, 1)
+
+[node name="sky-parallax" type="Node2D"]
+
+[node name="sky-bg" type="Parallax2D" parent="."]
+repeat_size = Vector2(700, 0)
+
+[node name="TextureRect" type="TextureRect" parent="sky-bg"]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 650.0
+offset_bottom = 520.0
+texture = SubResource("GradientTexture2D_fgqpt")
+metadata/_edit_use_anchors_ = true
+
+[node name="clouds-back" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(700, 0)
+
+[node name="ColorRect" type="ColorRect" parent="clouds-back"]
+offset_left = -50.0
+offset_top = 370.0
+offset_right = 650.0
+offset_bottom = 570.0
+color = Color(0.8, 0.921569, 0.894118, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="clouds-back"]
+position = Vector2(-50, -50)
+texture = ExtResource("1_ictil")
+offset = Vector2(350, 210)
+
+[node name="clouds-front" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(700, 0)
+
+[node name="ColorRect" type="ColorRect" parent="clouds-front"]
+offset_left = -50.0
+offset_top = 370.0
+offset_right = 650.0
+offset_bottom = 570.0
+color = Color(0.921569, 0.964706, 0.952941, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="clouds-front"]
+position = Vector2(-50, -50)
+texture = ExtResource("2_fgqpt")
+offset = Vector2(350, 210)
