@@ -16,3 +16,6 @@ shape = SubResource("RectangleShape2D_3erkm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_f0e8s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
