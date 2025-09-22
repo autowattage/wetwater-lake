@@ -28,7 +28,7 @@ repeat_times = 50
 modulate = Color(1, 1, 1, 0.286275)
 offset_top = 3.0
 offset_right = 60.0
-offset_bottom = 603.0
+offset_bottom = 1612.0
 texture = SubResource("GradientTexture2D_udbmu")
 
 [node name="Sprite2D" type="Sprite2D" parent="wave-top"]

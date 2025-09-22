@@ -44,5 +44,5 @@ color = Color(0.509804, 0.737255, 0.733333, 1)
 [node name="TextureRect2" type="TextureRect" parent="Parallax2D"]
 offset_top = 235.0
 offset_right = 60.0
-offset_bottom = 568.0
+offset_bottom = 1266.0
 texture = SubResource("GradientTexture2D_apfq5")
