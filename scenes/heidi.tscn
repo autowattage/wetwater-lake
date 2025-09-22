@@ -1,21 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://b147l0knmiy5a"]
+[gd_scene load_steps=5 format=3 uid="uid://b147l0knmiy5a"]
 
 [ext_resource type="Script" uid="uid://qv4djpq18qys" path="res://scripts/heidi.gd" id="1_r4krq"]
+[ext_resource type="PackedScene" uid="uid://c213mqyq0m83i" path="res://scenes/water_detect.tscn" id="2_3erkm"]
 [ext_resource type="Texture2D" uid="uid://6jr1ngj65qh8" path="res://icon.svg" id="2_f0e8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3erkm"]
 size = Vector2(128, 128)
 
 [node name="heidi" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_r4krq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_3erkm")
+[node name="water-detect" parent="." instance=ExtResource("2_3erkm")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_f0e8s")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3erkm")
+
+[connection signal="entered_water" from="water-detect" to="." method="_on_waterdetect_entered_water"]
+[connection signal="exited_water" from="water-detect" to="." method="_on_waterdetect_exited_water"]

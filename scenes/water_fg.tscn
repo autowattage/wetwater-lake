@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwqxbmmmjvm8n"]
+
+[ext_resource type="Texture2D" uid="uid://btqxfj2udnxoe" path="res://assets/water-fg-wave.png" id="1_5jq05"]
+[ext_resource type="Shader" uid="uid://df8ibhqb6jcuj" path="res://shaders/multiply.gdshader" id="1_cx3cv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_udbmu"]
+shader = ExtResource("1_cx3cv")
+
+[sub_resource type="Gradient" id="Gradient_cx3cv"]
+offsets = PackedFloat32Array(0, 0.324561, 1)
+colors = PackedColorArray(0.6, 0.811765, 0.796078, 1, 0.509804, 0.737255, 0.733333, 1, 0.447059, 0.658824, 0.670588, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_udbmu"]
+gradient = SubResource("Gradient_cx3cv")
+width = 60
+height = 60
+fill_to = Vector2(0, 1)
+
+[node name="water-fg" type="Node2D"]
+
+[node name="wave-top" type="Parallax2D" parent="."]
+material = SubResource("ShaderMaterial_udbmu")
+repeat_size = Vector2(60, 0)
+autoscroll = Vector2(10, 0)
+repeat_times = 50
+
+[node name="TextureRect" type="TextureRect" parent="wave-top"]
+modulate = Color(1, 1, 1, 0.286275)
+offset_top = 3.0
+offset_right = 60.0
+offset_bottom = 603.0
+texture = SubResource("GradientTexture2D_udbmu")
+
+[node name="Sprite2D" type="Sprite2D" parent="wave-top"]
+texture = ExtResource("1_5jq05")
+offset = Vector2(30, 3)

@@ -15,6 +15,7 @@ fill_to = Vector2(0, 1)
 
 [node name="sky-bg" type="Parallax2D" parent="."]
 repeat_size = Vector2(700, 0)
+repeat_times = 4
 
 [node name="TextureRect" type="TextureRect" parent="sky-bg"]
 offset_left = -50.0
@@ -26,7 +27,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="clouds-back" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(0, -64)
 repeat_size = Vector2(700, 0)
+repeat_times = 4
 
 [node name="ColorRect" type="ColorRect" parent="clouds-back"]
 offset_left = -50.0
@@ -34,6 +37,7 @@ offset_top = 370.0
 offset_right = 650.0
 offset_bottom = 570.0
 color = Color(0.8, 0.921569, 0.894118, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="clouds-back"]
 position = Vector2(-50, -50)
@@ -42,7 +46,9 @@ offset = Vector2(350, 210)
 
 [node name="clouds-front" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.3, 0.3)
+scroll_offset = Vector2(0, -72)
 repeat_size = Vector2(700, 0)
+repeat_times = 4
 
 [node name="ColorRect" type="ColorRect" parent="clouds-front"]
 offset_left = -50.0

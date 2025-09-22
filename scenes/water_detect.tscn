@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c213mqyq0m83i"]
+
+[ext_resource type="Script" uid="uid://dvq6as5g8n0x2" path="res://scripts/water_detect.gd" id="1_meob3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3erkm"]
+size = Vector2(128, 128)
+
+[node name="water-detect" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_meob3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3erkm")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
