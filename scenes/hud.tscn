@@ -1,15 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bk1smg023l4h"]
+[gd_scene load_steps=8 format=3 uid="uid://bk1smg023l4h"]
 
+[ext_resource type="Script" uid="uid://x0q11l7ebvf0" path="res://scripts/hud.gd" id="1_047uy"]
 [ext_resource type="Texture2D" uid="uid://cy366wopguwii" path="res://assets/depth-slider.png" id="1_oo0fn"]
 [ext_resource type="Texture2D" uid="uid://nhyx3psc6vd" path="res://assets/watertank-bg.png" id="1_uo2fv"]
 [ext_resource type="Texture2D" uid="uid://c8ttn620p67x2" path="res://assets/heidi-marker.png" id="2_5ysmq"]
 [ext_resource type="Texture2D" uid="uid://caubs1kqw88b6" path="res://assets/watertank.png" id="2_047uy"]
-[ext_resource type="Script" uid="uid://x0q11l7ebvf0" path="res://scenes/depth_bar.gd" id="4_5pdws"]
+[ext_resource type="Texture2D" uid="uid://dgw8apd77eym0" path="res://assets/watertank-pointer.png" id="4_047uy"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uo2fv"]
 blend_mode = 2
 
 [node name="hud" type="CanvasLayer"]
+script = ExtResource("1_047uy")
 
 [node name="status-bars" type="HFlowContainer" parent="."]
 offset_top = 40.0
@@ -22,10 +24,28 @@ alignment = 2
 
 [node name="watertank-bar" type="TextureProgressBar" parent="status-bars"]
 layout_mode = 2
-value = 100.0
+max_value = 1.0
+step = 0.0
+value = 1.0
 fill_mode = 3
-texture_under = ExtResource("1_uo2fv")
 texture_progress = ExtResource("2_047uy")
+
+[node name="TextureRect" type="TextureRect" parent="status-bars/watertank-bar"]
+z_index = -1
+material = SubResource("CanvasItemMaterial_uo2fv")
+layout_mode = 0
+offset_right = 15.0
+offset_bottom = 280.0
+texture = ExtResource("1_uo2fv")
+
+[node name="arrow" type="TextureRect" parent="status-bars/watertank-bar"]
+material = SubResource("CanvasItemMaterial_uo2fv")
+layout_mode = 0
+offset_left = -14.0
+offset_top = -4.0
+offset_right = -4.0
+offset_bottom = 5.0
+texture = ExtResource("4_047uy")
 
 [node name="depth-bar" type="TextureProgressBar" parent="status-bars"]
 custom_minimum_size = Vector2(9, 0)
@@ -33,7 +53,6 @@ layout_mode = 2
 max_value = 1.0
 step = 0.0
 fill_mode = 3
-script = ExtResource("4_5pdws")
 
 [node name="TextureRect" type="TextureRect" parent="status-bars/depth-bar"]
 material = SubResource("CanvasItemMaterial_uo2fv")
@@ -55,4 +74,5 @@ texture = ExtResource("2_5ysmq")
 custom_minimum_size = Vector2(4, 0)
 layout_mode = 2
 
-[connection signal="value_changed" from="status-bars/depth-bar" to="status-bars/depth-bar" method="_on_value_changed"]
+[connection signal="value_changed" from="status-bars/watertank-bar" to="." method="_on_watertankbar_value_changed"]
+[connection signal="value_changed" from="status-bars/depth-bar" to="." method="_on_depthbar_value_changed"]
