@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://c213mqyq0m83i" path="res://scenes/water_detect.tscn" id="2_3erkm"]
 [ext_resource type="Texture2D" uid="uid://b7635v71j160y" path="res://assets/heidi/heidi.png" id="2_f0e8s"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3erkm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0e8s"]
 atlas = ExtResource("2_f0e8s")
 region = Rect2(0, 0, 300, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5qq1j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3erkm"]
 atlas = ExtResource("2_f0e8s")
 region = Rect2(300, 0, 300, 150)
 
@@ -16,10 +16,10 @@ region = Rect2(300, 0, 300, 150)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3erkm")
+"texture": SubResource("AtlasTexture_f0e8s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5qq1j")
+"texture": SubResource("AtlasTexture_3erkm")
 }],
 "loop": true,
 "name": &"idle",
@@ -27,7 +27,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0e8s"]
-size = Vector2(34, 80)
+size = Vector2(38, 80)
 
 [node name="heidi" type="CharacterBody2D"]
 script = ExtResource("1_r4krq")
@@ -44,7 +44,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 17)
+position = Vector2(0, 17)
 shape = SubResource("RectangleShape2D_f0e8s")
 
 [connection signal="entered_water" from="water-detect" to="." method="_on_waterdetect_entered_water"]

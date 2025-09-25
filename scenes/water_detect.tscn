@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dvq6as5g8n0x2" path="res://scripts/water_detect.gd" id="1_meob3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_meob3"]
-size = Vector2(34, 80)
+size = Vector2(38, 80)
 
 [node name="water-detect" type="Area2D"]
 collision_layer = 2
