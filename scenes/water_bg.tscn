@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://t652sobmcv7o"]
 
-[ext_resource type="Texture2D" uid="uid://cdqliwv6b2ywe" path="res://assets/water-bg-wave.png" id="1_cm18h"]
+[ext_resource type="Texture2D" uid="uid://cdqliwv6b2ywe" path="res://assets/bg/water-bg-wave.png" id="1_cm18h"]
 
 [sub_resource type="Gradient" id="Gradient_apfq5"]
 colors = PackedColorArray(0.443137, 0.654902, 0.666667, 1, 0.509804, 0.737255, 0.733333, 1)

@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bk1smg023l4h"]
+[gd_scene load_steps=10 format=3 uid="uid://bk1smg023l4h"]
 
 [ext_resource type="Script" uid="uid://x0q11l7ebvf0" path="res://scripts/hud.gd" id="1_047uy"]
-[ext_resource type="Texture2D" uid="uid://cy366wopguwii" path="res://assets/depth-slider.png" id="1_oo0fn"]
-[ext_resource type="Texture2D" uid="uid://nhyx3psc6vd" path="res://assets/watertank-bg.png" id="1_uo2fv"]
-[ext_resource type="Texture2D" uid="uid://c8ttn620p67x2" path="res://assets/heidi-marker.png" id="2_5ysmq"]
-[ext_resource type="Texture2D" uid="uid://caubs1kqw88b6" path="res://assets/watertank.png" id="2_047uy"]
-[ext_resource type="Texture2D" uid="uid://dgw8apd77eym0" path="res://assets/watertank-pointer.png" id="4_047uy"]
+[ext_resource type="Texture2D" uid="uid://cy366wopguwii" path="res://assets/hud/depth-slider.png" id="1_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://nhyx3psc6vd" path="res://assets/hud/watertank-bg.png" id="1_uo2fv"]
+[ext_resource type="Texture2D" uid="uid://c8ttn620p67x2" path="res://assets/hud/heidi-marker.png" id="2_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://caubs1kqw88b6" path="res://assets/hud/watertank.png" id="2_047uy"]
+[ext_resource type="Texture2D" uid="uid://dgw8apd77eym0" path="res://assets/hud/watertank-pointer.png" id="4_047uy"]
+[ext_resource type="Texture2D" uid="uid://pgpqtjksqewy" path="res://assets/hud/hud-coin.png" id="7_5pdws"]
+[ext_resource type="FontFile" uid="uid://brsuno6bdl38i" path="res://assets/wendy.ttf" id="8_hd3ao"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uo2fv"]
 blend_mode = 2
@@ -73,6 +75,25 @@ texture = ExtResource("2_5ysmq")
 [node name="Container" type="Container" parent="status-bars"]
 custom_minimum_size = Vector2(4, 0)
 layout_mode = 2
+
+[node name="coin-counter" type="TextureRect" parent="."]
+offset_top = 16.0
+offset_right = 88.0
+offset_bottom = 44.0
+texture = ExtResource("7_5pdws")
+
+[node name="Label" type="Label" parent="coin-counter"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 30.0
+offset_top = -4.0
+offset_right = 84.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.7607843, 0.48235294, 0.23921569, 1)
+theme_override_fonts/font = ExtResource("8_hd3ao")
+theme_override_font_sizes/font_size = 40
+text = "999"
+horizontal_alignment = 2
 
 [connection signal="value_changed" from="status-bars/watertank-bar" to="." method="_on_watertankbar_value_changed"]
 [connection signal="value_changed" from="status-bars/depth-bar" to="." method="_on_depthbar_value_changed"]

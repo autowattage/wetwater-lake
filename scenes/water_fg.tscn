@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwqxbmmmjvm8n"]
+[gd_scene load_steps=7 format=3 uid="uid://cwqxbmmmjvm8n"]
 
-[ext_resource type="Texture2D" uid="uid://btqxfj2udnxoe" path="res://assets/water-fg-wave.png" id="1_5jq05"]
+[ext_resource type="Texture2D" uid="uid://btqxfj2udnxoe" path="res://assets/bg/water-fg-wave.png" id="1_5jq05"]
 [ext_resource type="Shader" uid="uid://df8ibhqb6jcuj" path="res://shaders/multiply.gdshader" id="1_cx3cv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_udbmu"]
 shader = ExtResource("1_cx3cv")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cx3cv"]
+blend_mode = 1
 
 [sub_resource type="Gradient" id="Gradient_cx3cv"]
 offsets = PackedFloat32Array(0, 0.324561, 1)
@@ -25,7 +28,8 @@ autoscroll = Vector2(10, 0)
 repeat_times = 50
 
 [node name="TextureRect" type="TextureRect" parent="wave-top"]
-modulate = Color(1, 1, 1, 0.286275)
+modulate = Color(0.13411054, 0.22928905, 0.31448373, 0.45490196)
+material = SubResource("CanvasItemMaterial_cx3cv")
 offset_top = 3.0
 offset_right = 60.0
 offset_bottom = 1612.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgw8apd77eym0"
-path="res://.godot/imported/watertank-pointer.png-ed454c69a138a512667fdb33d2792d10.ctex"
+uid="uid://pgpqtjksqewy"
+path="res://.godot/imported/hud-coin.png-9ed30cdd7e9a15722fa7a2caebd968e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/watertank-pointer.png"
-dest_files=["res://.godot/imported/watertank-pointer.png-ed454c69a138a512667fdb33d2792d10.ctex"]
+source_file="res://assets/hud/hud-coin.png"
+dest_files=["res://.godot/imported/hud-coin.png-9ed30cdd7e9a15722fa7a2caebd968e2.ctex"]
 
 [params]
 

@@ -1,28 +1,51 @@
-[gd_scene load_steps=5 format=3 uid="uid://b147l0knmiy5a"]
+[gd_scene load_steps=8 format=3 uid="uid://b147l0knmiy5a"]
 
 [ext_resource type="Script" uid="uid://qv4djpq18qys" path="res://scripts/heidi.gd" id="1_r4krq"]
 [ext_resource type="PackedScene" uid="uid://c213mqyq0m83i" path="res://scenes/water_detect.tscn" id="2_3erkm"]
-[ext_resource type="Texture2D" uid="uid://6jr1ngj65qh8" path="res://icon.svg" id="2_f0e8s"]
+[ext_resource type="Texture2D" uid="uid://b7635v71j160y" path="res://assets/heidi/heidi.png" id="2_f0e8s"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3erkm"]
-size = Vector2(128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3erkm"]
+atlas = ExtResource("2_f0e8s")
+region = Rect2(0, 0, 300, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qq1j"]
+atlas = ExtResource("2_f0e8s")
+region = Rect2(300, 0, 300, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aduw6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3erkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qq1j")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0e8s"]
+size = Vector2(34, 80)
 
 [node name="heidi" type="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
 script = ExtResource("1_r4krq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aduw6")
+animation = &"idle"
 
 [node name="water-detect" parent="." instance=ExtResource("2_3erkm")]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_f0e8s")
+position = Vector2(-2, 17)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_3erkm")
+position = Vector2(-2, 17)
+shape = SubResource("RectangleShape2D_f0e8s")
 
 [connection signal="entered_water" from="water-detect" to="." method="_on_waterdetect_entered_water"]
 [connection signal="exited_water" from="water-detect" to="." method="_on_waterdetect_exited_water"]

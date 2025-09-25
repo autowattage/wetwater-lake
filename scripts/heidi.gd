@@ -5,7 +5,7 @@ var inwater = false
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity += get_gravity() * delta * .5 if inwater else get_gravity() * delta
+		velocity += get_gravity() * delta * .25 if inwater else get_gravity() * delta
 
 	if Input.is_action_just_pressed("move_down"):
 		velocity += get_gravity() * delta * 40
@@ -22,8 +22,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_waterdetect_entered_water() -> void:
 	inwater = true
-	JUMP_VELOCITY = -300
+	JUMP_VELOCITY = -200
 func _on_waterdetect_exited_water() -> void:
 	inwater = false
 	JUMP_VELOCITY = -400
-	velocity -= Vector2(0,200)
+	velocity -= Vector2(0,250)

@@ -3,21 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://caubs1kqw88b6"
-path="res://.godot/imported/watertank.png-bd5a6b8141e1cbd7044ae8a9d81667c7.ctex"
+path="res://.godot/imported/watertank.png-6ce8286bc946d651592117094a6159c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/watertank.png"
-dest_files=["res://.godot/imported/watertank.png-bd5a6b8141e1cbd7044ae8a9d81667c7.ctex"]
+source_file="res://assets/hud/watertank.png"
+dest_files=["res://.godot/imported/watertank.png-6ce8286bc946d651592117094a6159c7.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

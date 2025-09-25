@@ -22,4 +22,4 @@ func _on_depthbar_value_changed(value: float) -> void:
 	depth_bar.get_node("heidi-lv").position.y = -5+depth_bar.value*271
 
 func _on_watertankbar_value_changed(value: float) -> void:
-	watertank_bar.get_node("arrow").position.y = 269-watertank_bar.value*271
+	watertank_bar.get_node("arrow").position.y = 268-watertank_bar.value*271

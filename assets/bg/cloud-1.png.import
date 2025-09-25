@@ -2,22 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7rmxoadlifgy"
-path="res://.godot/imported/tilemap-rocks.png-33556b8c1da021ae4c362b6857c4aba1.ctex"
+uid="uid://bndeh0w2rerbf"
+path="res://.godot/imported/cloud-1.png-828c832d9fbe66aa2f125fbf8e084ed6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemap-rocks.png"
-dest_files=["res://.godot/imported/tilemap-rocks.png-33556b8c1da021ae4c362b6857c4aba1.ctex"]
+source_file="res://assets/bg/cloud-1.png"
+dest_files=["res://.godot/imported/cloud-1.png-828c832d9fbe66aa2f125fbf8e084ed6.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
