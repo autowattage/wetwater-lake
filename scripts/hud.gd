@@ -26,4 +26,4 @@ func _on_watertankbar_value_changed(value: float) -> void:
 	watertank_bar.get_node("arrow").position.y = 268-watertank_bar.value*271
 
 func update_coins(amnt):
-	$"coin-counter/Label".text = str(amnt)
+	$"coin-counter/Label".text = str("%03d" % amnt)

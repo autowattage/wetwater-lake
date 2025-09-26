@@ -171,7 +171,7 @@ metadata/_custom_type_script = "uid://cjk8nronimk5r"
 [node name="heidi" parent="." instance=ExtResource("3_sugp2")]
 position = Vector2(320, 240)
 
-[node name="water-fg" parent="." instance=ExtResource("8_tipki")]
+[node name="water-fg" type="Node2D" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(0, 357)
 
 [node name="hud" parent="." instance=ExtResource("6_tefeu")]
