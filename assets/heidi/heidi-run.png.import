@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4jccumk7qkve"
-path="res://.godot/imported/heidi.png-2f810b11de45e0fbff0183c168491e7c.ctex"
+uid="uid://bskhsagqi8yan"
+path="res://.godot/imported/heidi-run.png-a1d1bfc8654a1181acf233eef851db57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/heidi/heidi.png"
-dest_files=["res://.godot/imported/heidi.png-2f810b11de45e0fbff0183c168491e7c.ctex"]
+source_file="res://assets/heidi/heidi-run.png"
+dest_files=["res://.godot/imported/heidi-run.png-a1d1bfc8654a1181acf233eef851db57.ctex"]
 
 [params]
 

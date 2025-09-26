@@ -16,8 +16,12 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
+		$AnimatedSprite2D.play("run")
+		$AnimatedSprite2D.flip_h = direction<0
+		$AnimatedSprite2D.speed_scale = 0.5 if inwater else 1
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		$AnimatedSprite2D.play("idle")
 	move_and_slide()
 
 func _on_waterdetect_entered_water() -> void:

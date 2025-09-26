@@ -10,6 +10,7 @@ var bottom_pos_clamp
 func _ready() -> void:
 	top_pos_clamp = heidi.position.y
 	bottom_pos_clamp = 1536
+	Main.addcoin.connect(update_coins)
 
 func _process(delta: float) -> void:
 	depth_bar.value = heidi.position.y/(bottom_pos_clamp-top_pos_clamp)-.2
@@ -23,3 +24,6 @@ func _on_depthbar_value_changed(value: float) -> void:
 
 func _on_watertankbar_value_changed(value: float) -> void:
 	watertank_bar.get_node("arrow").position.y = 268-watertank_bar.value*271
+
+func update_coins(amnt):
+	$"coin-counter/Label".text = str(amnt)
