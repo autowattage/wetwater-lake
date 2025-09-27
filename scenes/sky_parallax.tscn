@@ -27,7 +27,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="clouds-back" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(0, -48)
+scroll_offset = Vector2(0, -64)
 repeat_size = Vector2(700, 0)
 repeat_times = 4
 
@@ -46,7 +46,7 @@ offset = Vector2(350, 210)
 
 [node name="clouds-front" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.3, 0.3)
-scroll_offset = Vector2(0, -56)
+scroll_offset = Vector2(0, -72)
 repeat_size = Vector2(700, 0)
 repeat_times = 4
 

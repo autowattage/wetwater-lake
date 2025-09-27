@@ -32,7 +32,7 @@ modulate = Color(0.13411054, 0.22928905, 0.31448373, 0.45490196)
 material = SubResource("CanvasItemMaterial_cx3cv")
 offset_top = 3.0
 offset_right = 60.0
-offset_bottom = 1612.0
+offset_bottom = 2995.0
 texture = SubResource("GradientTexture2D_udbmu")
 
 [node name="Sprite2D" type="Sprite2D" parent="wave-top"]

@@ -9,11 +9,13 @@ var bottom_pos_clamp
 
 func _ready() -> void:
 	top_pos_clamp = heidi.position.y
-	bottom_pos_clamp = 1536
+	bottom_pos_clamp = 2371-180
 	Main.addcoin.connect(update_coins)
 
 func _process(delta: float) -> void:
 	depth_bar.value = heidi.position.y/(bottom_pos_clamp-top_pos_clamp)-.2
+	if watertank_bar.value <= 0:
+		get_tree().reload_current_scene()
 	if WaterDetect.inwater:
 		watertank_bar.value -= 0.025 * delta
 	else:
